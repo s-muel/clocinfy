@@ -17,13 +17,25 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
+            Expanded(
+                child: Center(
+              child: Image.asset('assets/images/onload.png'),
+            )),
+            Padding(
+              padding: const EdgeInsets.all(26.0),
+              child: SizedBox(
+                height: 60,
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color(0xFF007AD9),
+                    foregroundColor: Colors.white,
+                    textStyle: const TextStyle(fontSize: 16),
+                  ),
+                  child: const Text("Get Started"),
+                ),
               ),
-              child: const Text("Get Started"),
             )
           ],
         ),
