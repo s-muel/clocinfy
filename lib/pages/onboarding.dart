@@ -1,3 +1,4 @@
+import 'package:clockify/pages/registration.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/src/widgets/framework.dart';
 //import 'package:flutter/src/widgets/placeholder.dart';
@@ -28,7 +29,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 height: 60,
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {  Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const RegistrationPage()),
+    );},
                   style: TextButton.styleFrom(
                     backgroundColor: const Color(0xFF007AD9),
                     foregroundColor: Colors.white,
