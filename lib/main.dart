@@ -1,5 +1,6 @@
 import 'package:clockify/pages/onboarding.dart';
 import 'package:flutter/material.dart';
+import 'package:clockify/pages/registration.dart';
 
 void main() {
   runApp(const MyApp());
