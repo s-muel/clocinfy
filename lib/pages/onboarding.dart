@@ -21,6 +21,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 child: Center(
               child: Image.asset('assets/images/onload.png'),
             )),
+            //
             Padding(
               padding: const EdgeInsets.all(26.0),
               child: SizedBox(
