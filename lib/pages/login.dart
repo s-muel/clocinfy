@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,9 +12,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
-       children: const [Text('Login')],
+       children: [Text('Login')],
       ),
     );
   }

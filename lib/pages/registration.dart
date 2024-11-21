@@ -37,12 +37,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     // Add registration logic here
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Register',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
@@ -62,7 +62,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
       children: [
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xFF515151),
             fontSize: 14,
             fontWeight: FontWeight.w400,
@@ -73,7 +73,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
           obscureText: isPassword,
           decoration: InputDecoration(
             filled: true,
-            fillColor: Color(0x4CD9D9D9),
+            fillColor: const Color(0x4CD9D9D9),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6),
               borderSide: BorderSide.none,
