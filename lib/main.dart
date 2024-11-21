@@ -1,3 +1,4 @@
+import 'package:clockify/pages/login.dart';
 import 'package:clockify/pages/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:clockify/pages/registration.dart';
@@ -17,7 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+
+      // the home is where the program starts
       home: const OnBoardingPage(),
+      routes: {
+        '/loginPage': (context) => const LoginPage(),
+      },
     );
   }
 }
