@@ -43,5 +43,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+<<<<<<< HEAD
 # Personal
+=======
+#Personally 
+>>>>>>> cd7ed3678d01473245de241d9124386d5c066456
 android/
