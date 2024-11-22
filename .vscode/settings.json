@@ -1,10 +1,12 @@
 {
     "cSpell.words": [
         "allprojects",
+        "buildlog",
         "Clokify",
         "cupertino",
         "Schyler",
         "stdlib",
-        "subprojects"
+        "subprojects",
+        "Symbolication"
     ]
 }

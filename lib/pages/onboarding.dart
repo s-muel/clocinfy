@@ -33,14 +33,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     // Here am using routes
                     Navigator.pushNamed(context, '/loginPage');
 
-                    //This is the code for using the old routing system
-
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const RegistrationPage(),
-                    //   ),
-                    // );
+                   
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: const Color(0xFF007AD9),
