@@ -2,7 +2,6 @@ import 'package:clockify/pages/login.dart';
 import 'package:clockify/pages/onboarding.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -23,6 +22,7 @@ class MyApp extends StatelessWidget {
       home: const OnBoardingPage(),
       routes: {
         '/loginPage': (context) => const LoginPage(),
+        '/getStarted': (context) => const OnBoardingPage(),
       },
     );
   }

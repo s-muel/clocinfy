@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,7 +12,8 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool _isChecked = true;
+  bool _isChecked = false;
+  bool _isPasswordVisible = false; // Add this as a state variable
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,18 +88,33 @@ class _LoginPageState extends State<LoginPage> {
                         padding: EdgeInsets.only(bottom: 8),
                         child: Text('Password'),
                       ),
+
                       TextFormField(
                         controller: _passwordController,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          fillColor: Color(0x4DD9D9D9),
+                        obscureText: !_isPasswordVisible, // Toggle visibility
+                        decoration: InputDecoration(
+                          fillColor: const Color(0x4DD9D9D9),
                           filled: true,
-                          border: OutlineInputBorder(
+                          border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(12)),
                             borderSide: BorderSide.none,
                           ),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isPasswordVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _isPasswordVisible =
+                                    !_isPasswordVisible; // Toggle the visibility
+                              });
+                            },
+                          ),
                         ),
                       ),
+
                       Row(
                         children: [
                           Checkbox(
@@ -133,6 +150,102 @@ class _LoginPageState extends State<LoginPage> {
                                     borderRadius: BorderRadius.circular(4))),
                             child: const Text("Login"),
                           ),
+                        ),
+                      ),
+                      // adding sign up test
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Text.rich(
+                            TextSpan(
+                              children: [
+                                const TextSpan(
+                                  text: "Don't have an account? ",
+                                  style: TextStyle(
+                                      color:
+                                          Colors.black), // Default text color
+                                ),
+                                TextSpan(
+                                  text: "Sign up",
+                                  style: const TextStyle(
+                                    color: Color(
+                                        0xFF007AD9), // Blue color for the "Sign up" link
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      // Navigate to the Sign Up page
+                                      Navigator.pushNamed(
+                                          context, '/getStarted');
+                                    },
+                                ),
+                                // adding continue
+
+                                //
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 18),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                thickness: 1,
+                                color: Colors.grey.shade400,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 10),
+                              child: Text(
+                                "OR",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                thickness: 1,
+                                color: Colors.grey.shade400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                          height:
+                              20), // Spacing between the "OR" and the button
+
+                      // Add the Google button
+                      SizedBox(
+                        width: double
+                            .infinity, // Make the button stretch horizontally
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            // Handle Google sign-in logic here
+                            // print("Google sign-in pressed");
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white, // White background
+                            foregroundColor: Colors.black, // Black text color
+                            side: const BorderSide(
+                                color: Colors.blue), // Border for the button
+                            shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.circular(8), // Rounded edges
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 15), // Adjust padding
+                          ),
+                          icon: Image.asset(
+                            'assets/images/google-logo.jpeg', // Path to your Google logo
+                            height: 20,
+                          ),
+                          label: const Text("Continue with Google"),
                         ),
                       )
                     ],
